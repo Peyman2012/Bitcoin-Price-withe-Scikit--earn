@@ -1,1 +1,1 @@
-# Bitcoin-Price-withe-Scikit--earn
+# Cryptocurrency-price-with-Scikit-learn
