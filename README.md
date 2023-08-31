@@ -13,12 +13,14 @@ The problem we are trying to solve is to determine a continuous numerical output
       answer = clf.predict(new_data)
 
 Encoding the code means that it works with numbers in scikit-learn, and the strings must be converted into code, which will be done using the following library:
+
      le = preprocessing.LabelEncoder()
      le.fit(Symbol)
      df['Name label'] = le.transform(Symbol)
      Name_label=df['Name label']
 
 To search for a value in the columns of the data set, we use the following code:
+
     for i in range(len(d_data)):
     symbol.append(d_data[i]['baseAsset'])
     open_price.append(d_data[i]['openPrice'])
@@ -28,4 +30,11 @@ To search for a value in the columns of the data set, we use the following code:
     ask_price.append(d_data[i]['askPrice'])
     last_price.append(d_data[i]['lastPrice'])
     volume.append(d_data[i]['volume'])
+
+This code gives the number of answers requested:
+
+    for i in range(len(new_data)):
+          df_name=df[df['Name label']==answer[i]]
+          search_name = df_name['Symbol'].tolist()
+          print(f'Cryptocurrency price your number {i+1} choice ====> {search_name[0]}')
 
