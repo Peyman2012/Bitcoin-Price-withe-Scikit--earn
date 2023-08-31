@@ -21,8 +21,6 @@ We select the dimensions for modeling from the columns of the dataframe:
 
       x=[]
       y=[]
-
-
       for i in range(len(df)):
           x.append([Price[i]])
           y.append([Name_label[i]])
