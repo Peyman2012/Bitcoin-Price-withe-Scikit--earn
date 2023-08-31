@@ -54,8 +54,6 @@ This code gives the number of answers requested:
           search_name = df_name['Symbol Coin'].tolist()
           print(f'Cryptocurrency price your number {i+1} choice ====> {search_name[0]}')
 
-          
-
 Data frame columns can be created using a dictionary:
 
    dic={'Symbol Coin':symbol,'Name Coin':name,'NameId':nameid,'Rank Coin':rank,'Price Coin':price,'Percent Change 24h':percent_change_24h,
