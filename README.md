@@ -38,3 +38,7 @@ This code gives the number of answers requested:
           search_name = df_name['Symbol'].tolist()
           print(f'Cryptocurrency price your number {i+1} choice ====> {search_name[0]}')
 
+Getting site information by using API, we get the price of cryptocurrencies.
+ requests.get(), we get the information that the site has provided to the programmers:
+
+          data = requests.get('https://api.wazirx.com/sapi/v1/tickers/24hr')
