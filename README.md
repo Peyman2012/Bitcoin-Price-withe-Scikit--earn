@@ -13,7 +13,8 @@ Library required for the project:
 Getting site information by using API, we get the price of cryptocurrencies.
  requests.get(), we get the information that the site has provided to the programmers:
 
-      data = requests.get('https://api.wazirx.com/sapi/v1/tickers/24hr')
+      url = 'https://api.coinlore.net/api/tickers/'
+      r = requests.get(url)
 
 We cannot use classification in this project because the classifier generally separates distinct classes, and so this classifier expects a string or an integer type to distinguish different classes from each other (this is called the "target " Is known). You can read more about this in Introduction to Classifiers.
 
@@ -21,7 +22,7 @@ The problem we are trying to solve is to determine a continuous numerical output
 
       clf = tree.DecisionTreeClassifier()
       clf = clf.fit(x, y)
-      new_data = [['2392999', '2350104.0', '2402000.0', '2371496.0'], ['46.7296', '45.5101', '47.0', '45.5267'], ['150000', '147000.1', '151400.0', '148998.9']]
+      new_data = [['27254.35'], ['1704.05'], ['1.00'], ['223.40'], ['1.00'], ['0.524916']]
       answer = clf.predict(new_data)
 
 Encoding the code means that it works with numbers in scikit-learn, and the strings must be converted into code, which will be done using the following library:
@@ -33,19 +34,28 @@ Encoding the code means that it works with numbers in scikit-learn, and the stri
 
 To search for a value in the columns of the data set, we use the following code:
 
-    for i in range(len(d_data)):
-    symbol.append(d_data[i]['baseAsset'])
-    open_price.append(d_data[i]['openPrice'])
-    low_price.append(d_data[i]['lowPrice'])
-    high_price.append(d_data[i]['highPrice'])
-    bid_price.append(d_data[i]['bidPrice'])
-    ask_price.append(d_data[i]['askPrice'])
-    last_price.append(d_data[i]['lastPrice'])
-    volume.append(d_data[i]['volume'])
+    for i in range(len(c_coin)):
+          symbol.append(c_coin[i]['symbol'])
+          name.append(c_coin[i]['name'])
+          nameid.append(c_coin[i]['nameid'])
+          rank.append(c_coin[i]['rank'])
+          price.append(c_coin[i]['price_usd'])
+          percent_change_24h.append(c_coin[i]['percent_change_24h'])
+          percent_change_1h.append(c_coin[i]['percent_change_1h'])
+          percent_change_7d.append(c_coin[i]['percent_change_7d'])
+          price_btc.append(c_coin[i]['price_btc'])
+          market_cap_usd.append(c_coin[i]['market_cap_usd'])
+          volume24.append(c_coin[i]['volume24'])
 
 This code gives the number of answers requested:
 
     for i in range(len(new_data)):
           df_name=df[df['Name label']==answer[i]]
-          search_name = df_name['Symbol'].tolist()
+          search_name = df_name['Symbol Coin'].tolist()
           print(f'Cryptocurrency price your number {i+1} choice ====> {search_name[0]}')
+
+Data frame columns can be created using a dictionary:
+
+   dic={'Symbol Coin':symbol,'Name Coin':name,'NameId':nameid,'Rank Coin':rank,'Price Coin':price,'Percent Change 24h':percent_change_24h,
+     'Percent Change 1h':percent_change_1h,'Percent Change 7d':percent_change_7d,'Market Cap USD':market_cap_usd,'Volume':volume24}
+   df=pd.DataFrame(dic)
