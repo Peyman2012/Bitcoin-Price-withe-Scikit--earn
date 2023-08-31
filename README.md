@@ -16,6 +16,18 @@ Getting site information by using API, we get the price of cryptocurrencies.
       url = 'https://api.coinlore.net/api/tickers/'
       r = requests.get(url)
 
+
+We select the dimensions for modeling from the columns of the dataframe:
+
+      x=[]
+      y=[]
+
+
+      for i in range(len(df)):
+          x.append([Price[i]])
+          y.append([Name_label[i]])
+      
+
 We cannot use classification in this project because the classifier generally separates distinct classes, and so this classifier expects a string or an integer type to distinguish different classes from each other (this is called the "target " Is known). You can read more about this in Introduction to Classifiers.
 
 The problem we are trying to solve is to determine a continuous numerical output, Result. This is known as a regression problem, so we need to use a regression algorithm (such as DecisionTreeRegressor).
