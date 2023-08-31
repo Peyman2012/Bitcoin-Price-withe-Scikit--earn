@@ -69,3 +69,10 @@ Data frame columns can be created using a dictionary:
          dic={'Symbol Coin':symbol,'Name Coin':name,'NameId':nameid,'Rank Coin':rank,'Price Coin':price,'Percent Change 24h':percent_change_24h,
                'Percent Change 1h':percent_change_1h,'Percent Change 7d':percent_change_7d,'Market Cap USD':market_cap_usd,'Volume':volume24}
          df=pd.DataFrame(dic)
+
+
+Clip of how the project works:
+
+https://github.com/Peyman2012/Cryptocurrency-price-with-Scikit-learn/assets/88220773/d80be9a7-c5cc-49de-9ff6-27e74ed5caaa
+
+
