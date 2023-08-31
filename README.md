@@ -10,6 +10,11 @@ Library required for the project:
       from sklearn import preprocessing
       from sklearn import tree
 
+Getting site information by using API, we get the price of cryptocurrencies.
+ requests.get(), we get the information that the site has provided to the programmers:
+
+      data = requests.get('https://api.wazirx.com/sapi/v1/tickers/24hr')
+
 We cannot use classification in this project because the classifier generally separates distinct classes, and so this classifier expects a string or an integer type to distinguish different classes from each other (this is called the "target " Is known). You can read more about this in Introduction to Classifiers.
 
 The problem we are trying to solve is to determine a continuous numerical output, Result. This is known as a regression problem, so we need to use a regression algorithm (such as DecisionTreeRegressor).
@@ -44,8 +49,3 @@ This code gives the number of answers requested:
           df_name=df[df['Name label']==answer[i]]
           search_name = df_name['Symbol'].tolist()
           print(f'Cryptocurrency price your number {i+1} choice ====> {search_name[0]}')
-
-Getting site information by using API, we get the price of cryptocurrencies.
- requests.get(), we get the information that the site has provided to the programmers:
-
-          data = requests.get('https://api.wazirx.com/sapi/v1/tickers/24hr')
