@@ -56,6 +56,6 @@ This code gives the number of answers requested:
 
 Data frame columns can be created using a dictionary:
 
-   dic={'Symbol Coin':symbol,'Name Coin':name,'NameId':nameid,'Rank Coin':rank,'Price Coin':price,'Percent Change 24h':percent_change_24h,
+         dic={'Symbol Coin':symbol,'Name Coin':name,'NameId':nameid,'Rank Coin':rank,'Price Coin':price,'Percent Change 24h':percent_change_24h,
      'Percent Change 1h':percent_change_1h,'Percent Change 7d':percent_change_7d,'Market Cap USD':market_cap_usd,'Volume':volume24}
-   df=pd.DataFrame(dic)
+         df=pd.DataFrame(dic)
