@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from sklearn import preprocessing
 from sklearn import tree
-# data = requests.get('https://api.coincap.io/v2/assets')
+
 data = requests.get('https://api.wazirx.com/sapi/v1/tickers/24hr')
 
 d_data=data.json()
